@@ -2,11 +2,16 @@
 
 # dependencies
 /node_modules
+/browser
 /.pnp
 .pnp.js
 
 # testing
 /coverage
+/results
+log.html
+output.html
+report.html
 
 # production
 /build
@@ -19,6 +24,7 @@
 .env.production.local
 .venv
 .vscode
+
 __pycache__
 
 npm-debug.log*
