@@ -16,7 +16,7 @@ class RobotListenerV2:
         self.file = open(path, 'w')
         self.client = OpenAI(
             # set api key for ChatGPT from OpenAI API
-            api_key="..."
+            api_key="sk-proj-EnFQ80pADZV6pc1PQOVuT3BlbkFJ4GKZJatjtmZd00yFqYYo"
         )
         self.kwd_list = []
         self.jira = JiraApi()
