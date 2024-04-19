@@ -2,9 +2,11 @@
 # MAC/LINUX: export OPENAI_API_KEY=...
 # WINDOWS: setx OPENAI_API_KEY "..."
 
+from . import secrets
 from openai import OpenAI
+
 client = OpenAI(
-    api_key="sk-proj-EnFQ80pADZV6pc1PQOVuT3BlbkFJ4GKZJatjtmZd00yFqYYo"
+    api_key=secrets.OPENAI_API_KEY
 )
 
 completion = client.chat.completions.create(

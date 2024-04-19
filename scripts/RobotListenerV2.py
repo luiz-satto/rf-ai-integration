@@ -1,11 +1,12 @@
 import os.path
 import json
-from robot.api import logger
-from openai import OpenAI
-from robot.libraries.BuiltIn import BuiltIn
 import time
 
-from jira_api import JiraApi
+from .                       import secrets
+from openai                  import OpenAI
+from jira_api                import JiraApi
+from robot.api               import logger
+from robot.libraries.BuiltIn import BuiltIn
 
 class RobotListenerV2:
     ROBOT_LISTENER_API_VERSION = 2
@@ -16,14 +17,14 @@ class RobotListenerV2:
         self.file = open(path, 'w')
         self.client = OpenAI(
             # set api key for ChatGPT from OpenAI API
-            api_key="sk-proj-EnFQ80pADZV6pc1PQOVuT3BlbkFJ4GKZJatjtmZd00yFqYYo"
+            api_key=secrets.OPENAI_API_KEY
         )
         self.kwd_list = []
         self.jira = JiraApi()
     
     def query_gpt(self, system, message):
         completion = self.client.chat.completions.create(
-            model="gpt-4-turbo-preview",
+            model="gpt-3.5-turbo-0125",
             messages=[
                 {"role": "system", "content": system},
                 {"role": "user", "content": message}

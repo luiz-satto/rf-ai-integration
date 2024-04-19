@@ -1,12 +1,14 @@
 import jira
 
+from . import secrets
+
 class JiraApi:
     def __init__(self):
         self.client = jira.JIRA(
             server='https://luiz-satto.atlassian.net',
             # set email and api token
             basic_auth=('email', 'luizf.satto@gmail.com'),
-            token_auth='bearer ATATT3xFfGF07nkudl6CwRNg9R6u-8bWSx3LxnBYeJedYGnKI2I7xwiLJtBZ-vPlKK4YtfTywx2wbymv-2feWtBGKbs-uIWy-YepuBKTrhpkOUuAzdn8J8ChoBtpSqPnVStcglSiIbOifRVFTMDdzg6DgurMk5-cGXSwClEMY7dNIWxRcBEwicQ=873B03F5'
+            token_auth='bearer ' % secrets.JIRA_API_KEY
         )
     
     def get_projects(self):
