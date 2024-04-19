@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-04-19T08:57:21.186085" rpa="false" schemaversion="5">
+<suite id="s1" name="Registration" source="C:\Projects\git\rf-ai-integration\robots\registration.robot">
+<kw name="New Browser" owner="Browser" type="SETUP">
+<msg time="2024-04-19T08:57:22.563405" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Projects\\git\\rf-ai-integration\\browser\\traces\\dd3b7475-9938-4607-9ee5-c1dd715a0de6"}</msg>
+<msg time="2024-04-19T08:57:23.016194" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Projects\\git\\rf-ai-integration\\browser\\traces\\dd3b7475-9938-4607-9ee5-c1dd715a0de6"}</msg>
+<arg>chromium</arg>
+<arg>No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-04-19T08:57:22.562409" elapsed="0.453785"/>
+</kw>
+<test id="s1-t1" name="Valid Email Should Be Accepted" line="15">
+<kw name="New Page" owner="Browser">
+<msg time="2024-04-19T08:57:24.049432" level="INFO">Successfully initialized new page object and opened url: https://stage.artima.ai/Identity/Account/Register</msg>
+<msg time="2024-04-19T08:57:24.049432" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-04-19T08:57:23.020184" elapsed="1.029248"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-04-19T08:57:24.050430" level="INFO">Fills the text 'user@example.com' in the given field.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${VALID_EMAIL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-04-19T08:57:24.050430" elapsed="0.078787"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-04-19T08:57:24.131212" level="INFO">Clicks the element 'css=button[type='submit']'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-04-19T08:57:24.130217" elapsed="0.184505"/>
+</kw>
+<kw name="Email Submission Should Be Successful">
+<kw name="Wait Until Page Is Ready">
+<kw name="Wait For Condition" owner="Browser">
+<msg time="2024-04-19T08:57:24.316717" level="FAIL">ValueError: Argument 'condition' got value 'return document.readyState == 'complete'' that cannot be converted to ConditionInputs: ConditionInputs does not have member 'return document.readyState == 'complete''. Available: 'attribute', 'attribute_names', 'bounding_box', 'browser_catalog', 'checkbox_state', 'classes', 'client_size', 'download_state', 'element_count', 'element_states', 'page_source', 'property', 'scroll_position', 'scroll_size', 'select_options', 'selected_options', 'style', 'table_cell_index', 'table_row_index', 'text', 'title', 'url' and 'viewport_size'</msg>
+<arg>return document.readyState == 'complete'</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for a condition, defined with Browser getter keywords to become True.</doc>
+<status status="FAIL" start="2024-04-19T08:57:24.315719" elapsed="0.001995">ValueError: Argument 'condition' got value 'return document.readyState == 'complete'' that cannot be converted to ConditionInputs: ConditionInputs does not have member 'return document.readyState == 'complete''. Available: 'attribute', 'attribute_names', 'bounding_box', 'browser_catalog', 'checkbox_state', 'classes', 'client_size', 'download_state', 'element_count', 'element_states', 'page_source', 'property', 'scroll_position', 'scroll_size', 'select_options', 'selected_options', 'style', 'table_cell_index', 'table_row_index', 'text', 'title', 'url' and 'viewport_size'</status>
+</kw>
+<status status="FAIL" start="2024-04-19T08:57:24.315719" elapsed="0.001995">ValueError: Argument 'condition' got value 'return document.readyState == 'complete'' that cannot be converted to ConditionInputs: ConditionInputs does not have member 'return document.readyState == 'complete''. Available: 'attribute', 'attribute_names', 'bounding_box', 'browser_catalog', 'checkbox_state', 'classes', 'client_size', 'download_state', 'element_count', 'element_states', 'page_source', 'property', 'scroll_position', 'scroll_size', 'select_options', 'selected_options', 'style', 'table_cell_index', 'table_row_index', 'text', 'title', 'url' and 'viewport_size'</status>
+</kw>
+<status status="FAIL" start="2024-04-19T08:57:24.314722" elapsed="0.003991">ValueError: Argument 'condition' got value 'return document.readyState == 'complete'' that cannot be converted to ConditionInputs: ConditionInputs does not have member 'return document.readyState == 'complete''. Available: 'attribute', 'attribute_names', 'bounding_box', 'browser_catalog', 'checkbox_state', 'classes', 'client_size', 'download_state', 'element_count', 'element_states', 'page_source', 'property', 'scroll_position', 'scroll_size', 'select_options', 'selected_options', 'style', 'table_cell_index', 'table_row_index', 'text', 'title', 'url' and 'viewport_size'</status>
+</kw>
+<status status="FAIL" start="2024-04-19T08:57:23.016194" elapsed="1.302519">ValueError: Argument 'condition' got value 'return document.readyState == 'complete'' that cannot be converted to ConditionInputs: ConditionInputs does not have member 'return document.readyState == 'complete''. Available: 'attribute', 'attribute_names', 'bounding_box', 'browser_catalog', 'checkbox_state', 'classes', 'client_size', 'download_state', 'element_count', 'element_states', 'page_source', 'property', 'scroll_position', 'scroll_size', 'select_options', 'selected_options', 'style', 'table_cell_index', 'table_row_index', 'text', 'title', 'url' and 'viewport_size'</status>
+</test>
+<kw name="Close Page" owner="Browser" type="TEARDOWN">
+<msg time="2024-04-19T08:57:24.511198" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2024-04-19T08:57:24.515186" level="INFO">Returned active browser id. CURRENT</msg>
+<msg time="2024-04-19T08:57:24.516183" level="INFO">Switching browser to browser=6d901463-a021-49cf-a5a1-71f0de06361b</msg>
+<msg time="2024-04-19T08:57:24.521173" level="INFO">Successfully changed active browser: browser=6d901463-a021-49cf-a5a1-71f0de06361b</msg>
+<msg time="2024-04-19T08:57:24.522168" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2024-04-19T08:57:24.526157" level="INFO">Returned info that no contexts are open</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<status status="PASS" start="2024-04-19T08:57:24.503218" elapsed="0.022939"/>
+</kw>
+<status status="FAIL" start="2024-04-19T08:57:21.199050" elapsed="3.327107"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Registration">Registration</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-04-19T08:57:21.197082" level="ERROR">Taking listener 'RobotListenerV2.py' into use failed: Importing listener 'RobotListenerV2.py' failed: ModuleNotFoundError: No module named 'RobotListenerV2'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Projects\git\rf-ai-integration\.venv\Scripts\robot.exe
+  C:\Users\Luiz Satto\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\Luiz Satto\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\Luiz Satto\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\Luiz Satto\AppData\Local\Programs\Python\Python312
+  c:\Projects\git\rf-ai-integration\.venv
+  c:\Projects\git\rf-ai-integration\.venv\Lib\site-packages</msg>
+</errors>
+</robot>
