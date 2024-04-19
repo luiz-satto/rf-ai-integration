@@ -19,7 +19,6 @@
 .env.production.local
 .venv
 .vscode
-secrets.py
 __pycache__
 
 npm-debug.log*
