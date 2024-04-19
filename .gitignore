@@ -9,6 +9,8 @@
 # testing
 /coverage
 /results
+listen.txt
+playwright-log.txt
 log.html
 output.html
 report.html
